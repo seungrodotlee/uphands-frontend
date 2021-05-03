@@ -28,19 +28,6 @@
     </b-button>
   </div>
 </template>
-
-<script>
-export default {
-  data: function() {
-    return {
-      logined: true,
-    };
-  },
-  methods: {},
-  created: function() {},
-};
-</script>
-
 <style>
 .navigation {
   min-height: 2rem;
@@ -68,4 +55,60 @@ export default {
 .navigation > .button:hover {
   opacity: 1;
 }
+
+.navigation > .button::before {
+  content: "";
+  position: absolute;
+  width: 10ch;
+  text-align: right;
+  left: calc(-10ch - 1rem);
+  transform: translateX(1rem);
+  color: black;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+  transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+}
+
+.navigation:hover > .button::before {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.navigation > .button.nav-home-btn::before {
+  content: "메인으로";
+}
+.navigation > .button.nav-login-btn::before {
+  content: "로그인";
+}
+.navigation > .button.nav-account-btn::before {
+  content: "내 정보";
+}
+.navigation > .button.nav-members-btn::before {
+  content: "회원사목록";
+}
+.navigation > .button.nav-announce-btn::before {
+  content: "공지사항";
+}
+.navigation > .button.nav-new-bid-btn::before {
+  content: "새 공고";
+}
+.navigation > .button.nav-bids-btn::before {
+  content: "공고목록";
+}
+.navigation > .button.nav-back-btn::before {
+  content: "뒤로가기";
+}
 </style>
+<script>
+export default {
+  data: function() {
+    return {
+      logined: true,
+    };
+  },
+  methods: {},
+  created: function() {},
+};
+</script>
