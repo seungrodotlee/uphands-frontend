@@ -18,16 +18,21 @@
         </div>
       </form>
     </div>
-    <div
-      class="home-article container"
-    >
-      <div class="full-y-view is-flex is-align-items-center is-justify-content-center">
-        <p class="title black-font">
-        가장 안전하고 쉬운 공개경쟁입찰 플랫폼
-      </p>
+    <div class="home-article-fixed-bg fixed full-view">
+      <div
+        class="handshake-wrap abs full-y is-flex is-align-items-center is-justify-content-center"
+      >
+        <handshake class="handshake"></handshake>
       </div>
-      
     </div>
+    <div class="home-article container">
+      <div
+        class="full-y-view is-flex is-align-items-center is-justify-content-center"
+      >
+        <p class="title black-font has-text-black">
+          가장 안전하고 쉬운 공개경쟁입찰 플랫폼
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -36,7 +41,9 @@
 
 .search-bar-wrap {
   padding: 1rem 0;
+  z-index: 10;
 }
+
 .search-bar-frame {
   height: 2.5rem;
   width: 360px;
@@ -69,9 +76,30 @@
   width: 2rem;
   margin-right: 0.25rem;
 }
+
+.home-article-fixed-bg {
+  top: 0;
+  left: 0;
+}
+
+.handshake-wrap {
+  left: -5%;
+  width: 110%;
+}
+
+.handshake {
+  fill: none;
+  stroke: $black;
+  stroke-width: 0.5rem;
+}
 </style>
 <script>
+import Handshake from "../components/Handshake.vue";
+
 export default {
   name: "Home",
+  components: {
+    handshake: Handshake,
+  },
 };
 </script>

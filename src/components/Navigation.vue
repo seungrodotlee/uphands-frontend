@@ -4,7 +4,7 @@
       <icon>home</icon>
     </b-button>
     <b-button
-      :class="!logined ? 'nav-login-btn' : 'nav-account-btn'"
+      :class="logined ? 'nav-account-btn' : 'nav-login-btn'"
       tag="router-link"
       to="/"
       type="is-black"
@@ -35,11 +35,13 @@
   min-height: 2rem;
   border-radius: 1.25rem;
   background: rgba(saturate($primary-darker, 10), 0.8);
-  bottom: 1rem;
+  top: 50%;
   right: 1rem;
+  transform: translateY(-50%);
   padding: 0.25rem;
   gap: 0.25rem;
   backdrop-filter: saturate(180%) blur(20px);
+  z-index: 100;
 }
 
 .navigation > .button {
@@ -60,6 +62,7 @@
 
 .navigation > .button::before {
   content: "";
+  pointer-events: none;
   position: absolute;
   width: 10ch;
   text-align: right;
@@ -107,7 +110,7 @@
 export default {
   data: function() {
     return {
-      logined: true,
+      logined: false,
     };
   },
   methods: {},
