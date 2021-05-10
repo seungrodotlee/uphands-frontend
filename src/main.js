@@ -4,12 +4,14 @@ import router from "./router";
 import store from "./store";
 import Buefy from "buefy";
 import Icon from "./components/Icon.vue";
-import "buefy/dist/buefy.css";
-import "./assets/global.css";
+import Logo from "./components/Logo.vue";
+//import "buefy/dist/buefy.css";
+import "./assets/main.scss";
 
 Vue.config.productionTip = false;
 Vue.use(Buefy);
 Vue.component("icon", Icon);
+Vue.component("logo", Logo);
 
 new Vue({
   router,

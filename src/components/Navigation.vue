@@ -28,13 +28,15 @@
     </b-button>
   </div>
 </template>
-<style>
+<style lang="scss">
+@import "../assets/main.scss";
+
 .navigation {
   min-height: 2rem;
   border-radius: 1.25rem;
-  background: rgba(0, 0, 0, 0.8);
-  bottom: 2rem;
-  right: 2rem;
+  background: rgba(saturate($primary-darker, 10), 0.8);
+  bottom: 1rem;
+  right: 1rem;
   padding: 0.25rem;
   gap: 0.25rem;
   backdrop-filter: saturate(180%) blur(20px);

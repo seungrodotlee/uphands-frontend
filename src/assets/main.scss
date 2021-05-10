@@ -1,0 +1,153 @@
+@import "~bulma/sass/utilities/_all";
+
+$primary: #34558b;
+$primary-light: lighten($primary, 10);
+$primary-dark: darken($primary, 10);
+$primary-darker: saturate(darken($primary, 20), 10);
+$primary-darkest: saturate(darken($primary, 30), 10);
+$primary-invert: findColorInvert($primary);
+
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: mergeColorMaps(
+  (
+    "white": (
+      $white,
+      $black,
+    ),
+    "black": (
+      $black,
+      $white,
+    ),
+    "light": (
+      $light,
+      $light-invert,
+    ),
+    "dark": (
+      $dark,
+      $dark-invert,
+    ),
+    "primary": (
+      $primary,
+      $primary-invert,
+      $primary-light,
+      $primary-dark,
+    ),
+    "link": (
+      $link,
+      $link-invert,
+      $link-light,
+      $link-dark,
+    ),
+    "info": (
+      $info,
+      $info-invert,
+      $info-light,
+      $info-dark,
+    ),
+    "success": (
+      $success,
+      $success-invert,
+      $success-light,
+      $success-dark,
+    ),
+    "warning": (
+      $warning,
+      $warning-invert,
+      $warning-light,
+      $warning-dark,
+    ),
+    "danger": (
+      $danger,
+      $danger-invert,
+      $danger-light,
+      $danger-dark,
+    ),
+  ),
+  $custom-colors
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+* {
+  outline: none;
+}
+
+.black-font {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+}
+
+.full-view {
+  height: 100vh;
+  width: 100vw;
+}
+
+.full-y-view {
+  height: 100vh;
+}
+
+.full-x-view {
+  width: 100vw;
+}
+
+.full {
+  height: 100%;
+  width: 100%;
+}
+
+.full-y {
+  height: 100%;
+}
+
+.full-x {
+  width: 100%;
+}
+
+.abs {
+  position: absolute;
+}
+
+.rel {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.centering {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex.vertical {
+  flex-direction: column;
+}
+
+.material-icons {
+  font-size: 1em;
+}
+
+.button > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
