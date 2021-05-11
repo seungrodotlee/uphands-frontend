@@ -1,8 +1,15 @@
 <template>
-  <div class="bids full flex vertical is-align-items-center">
-    <search-bar class="rel"></search-bar>
-    <div class="bids-list-wrap">
-      <b-table :data="bidsData">
+  <div class="bids full">
+    <search-bar class="abs"></search-bar>
+    <div class="bid-list-wrap container full-y">
+      <b-table
+        class="bid-list flex vertical is-align-items-center is-justify-content-space-between"
+        :data="bidsData"
+        default-sort="bidNo"
+        paginated
+        per-page="10"
+        @click="bidClicked($event)"
+      >
         <b-table-column
           field="bidNo"
           label="공고번호"
@@ -39,9 +46,14 @@
         </b-table-column>
         <b-table-column field="tag" label="태그" sortable v-slot="props">
           <b-taglist>
-            <b-tag type="is-info" v-for="t in props.row.tag" :key="t.tagTitle">
+            <b-tag
+              type="is-info"
+              v-for="t in minimizeTags(props.row.tag)"
+              :key="t.tagTitle"
+            >
               {{ t.tagTitle }}
             </b-tag>
+            <span v-if="props.row.tag.length > 3">...</span>
           </b-taglist>
         </b-table-column>
         <b-table-column
@@ -78,19 +90,60 @@ export default {
           tag: [{ tagTitle: "공사", tagType: "info" }],
           current: "입찰진행중",
         },
+        {
+          bidNo: 2,
+          bidName: "손소독제 구매",
+          bidder: "전주대학교",
+          annoDate: "2021-01-02",
+          bidStart: "2021-02-03",
+          bidEnd: "2021-03-03",
+          tag: [
+            { tagTitle: "구매", tagType: "info" },
+            { tagTitle: "대량", tagType: "info" },
+            { tagTitle: "긴급", tagType: "info" },
+            { tagTitle: "구매", tagType: "info" },
+            { tagTitle: "구매", tagType: "info" },
+            { tagTitle: "구매", tagType: "info" },
+            { tagTitle: "구매", tagType: "info" },
+          ],
+          current: "입찰진행중",
+        },
       ],
     };
   },
+  methods: {
+    bidClicked(evt) {
+      console.log(evt);
+    },
+    minimizeTags: function(t) {
+      return t.slice(0, 3);
+    },
+  },
+  mounted: function() {},
 };
 </script>
 
 <style lang="scss">
-.bids-list-wrap {
-  height: calc(100% - 10rem);
-  width: calc(100% - 10rem);
-  border-radius: 2.25rem;
-  margin-top: 2rem;
-  box-shadow: 0 0 15px rgba($primary, 0.5);
-  overflow: hidden;
+.bid-list {
+  height: 100%;
+  padding: 2rem 0;
+  padding-top: 6.5rem;
+}
+
+.bid-list > .table-wrapper {
+  width: 100%;
+}
+
+.bid-list > .top.level {
+  justify-content: center;
+}
+
+.bid-list tr {
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+.bid-list tbody tr:hover {
+  background: rgba($black, 0.1);
 }
 </style>
