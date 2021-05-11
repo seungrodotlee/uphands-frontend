@@ -1,23 +1,6 @@
 <template>
   <div class="home">
-    <div
-      class="search-bar-wrap abs full-x is-flex is-justify-content-center is-align-items-center"
-    >
-      <form action="" class="search-bar">
-        <div
-          class="search-bar-frame is-flex is-align-items-center is-justify-content-space-between"
-        >
-          <input
-            type="text"
-            name="searchValue"
-            placeholder="검색어를 입력하세요"
-          />
-          <b-button class="search-submit" type="submit" rounded>
-            <icon>search</icon>
-          </b-button>
-        </div>
-      </form>
-    </div>
+    <search-bar class="abs"></search-bar>
     <div class="home-article-fixed-bg fixed full-view">
       <div
         class="handshake-wrap abs full-y is-flex is-align-items-center is-justify-content-center"
@@ -37,7 +20,7 @@
   </div>
 </template>
 <style lang="scss">
-@import "../assets/main.scss";
+@import "../assets/variables.scss";
 
 .search-bar-wrap {
   padding: 1rem 0;
@@ -94,11 +77,13 @@
 }
 </style>
 <script>
+import SearchBar from "../components/SearchBar.vue";
 import Handshake from "../components/Handshake.vue";
 
 export default {
   name: "Home",
   components: {
+    "search-bar": SearchBar,
     handshake: Handshake,
   },
 };

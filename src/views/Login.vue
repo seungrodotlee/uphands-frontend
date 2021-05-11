@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/main.scss";
+@import "../assets/variables.scss";
 
 .login-form {
   box-shadow: 0 0 10px rgba($black, 0.125);

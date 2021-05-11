@@ -29,12 +29,12 @@
   </div>
 </template>
 <style lang="scss">
-@import "../assets/main.scss";
+@import "../assets/variables.scss";
 
 .navigation {
-  min-height: 2rem;
+  min-height: 2.5rem;
   border-radius: 1.25rem;
-  background: rgba(saturate($primary-darker, 10), 0.8);
+  background: rgba($black, 0.75);
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
@@ -42,12 +42,17 @@
   gap: 0.25rem;
   backdrop-filter: saturate(180%) blur(20px);
   z-index: 100;
+  transition: background 1s;
+}
+
+.navigation:hover {
+  background: $primary;
 }
 
 .navigation > .button {
   height: 2rem;
   width: 2rem;
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   background: transparent !important;
   color: white;
   padding: unset;

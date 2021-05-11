@@ -1,0 +1,22 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+
+$primary: #34558b;
+$primary-light: lighten($primary, 10);
+$primary-dark: darken($primary, 10);
+$primary-darker: saturate(darken($primary, 20), 10);
+$primary-darkest: saturate(darken($primary, 30), 10);
+$primary-invert: findColorInvert($primary);
+
+$black: rgb(32, 32, 32);
+$grey: grey;
+$white: rgb(236, 236, 236);
+$light: rgb(223, 223, 223);
+
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
