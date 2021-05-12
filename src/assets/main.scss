@@ -111,6 +111,10 @@ $colors: mergeColorMaps(
   display: flex !important;
 }
 
+.grid {
+  display: grid !important;
+}
+
 .flex.centering {
   align-items: center;
   justify-content: center;

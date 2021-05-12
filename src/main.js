@@ -6,6 +6,7 @@ import Buefy from "buefy";
 import Icon from "./components/Icon.vue";
 import Logo from "./components/Logo.vue";
 import Spacer from "./components/Spacer.vue";
+import ListBuilder from "./components/ListBuilder.vue";
 import "./assets/main.scss";
 
 Vue.config.productionTip = false;
@@ -13,6 +14,7 @@ Vue.use(Buefy);
 Vue.component("icon", Icon);
 Vue.component("logo", Logo);
 Vue.component("spacer", Spacer);
+Vue.component("list-builder", ListBuilder);
 
 new Vue({
   router,
