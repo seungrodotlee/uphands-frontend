@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     bidClicked(evt) {
-      console.log(evt);
+      this.$router.push({ path: `/bid/${evt.bidNo}` });
     },
     minimizeTags: function(t) {
       return t.slice(0, 3);
@@ -128,6 +128,7 @@ export default {
   height: 100%;
   padding: 2rem 0;
   padding-top: 6.5rem;
+  box-shadow: 0 0 15px rgba($primary, 0.3);
 }
 
 .bid-list > .table-wrapper {

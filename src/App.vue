@@ -25,7 +25,7 @@ body,
 
 #app {
   position: relative;
-  font-family: "Spoqa Han Sans Neo", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
