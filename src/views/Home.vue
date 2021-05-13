@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home no-spacer">
     <div class="home-article-fixed-bg fixed full-view">
       <div
         class="handshake-wrap abs full-y is-flex is-align-items-center is-justify-content-center"

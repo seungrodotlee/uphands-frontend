@@ -3,12 +3,14 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import Buefy from "buefy";
+import axios from "axios";
 import Icon from "./components/Icon.vue";
 import Logo from "./components/Logo.vue";
 import Spacer from "./components/Spacer.vue";
 import ListBuilder from "./components/ListBuilder.vue";
 import "./assets/main.scss";
 
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 Vue.use(Buefy);
 Vue.component("icon", Icon);

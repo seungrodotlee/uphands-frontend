@@ -27,8 +27,7 @@
       </div>
     </div>
     <navigation></navigation>
-    <spacer size="6.5rem" v-if="$route.name != 'Home'"></spacer>
-    <router-view />
+    <router-view class="main-view" />
   </div>
 </template>
 <style lang="scss">
@@ -46,6 +45,14 @@ body,
   font-family: "Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.main-view {
+  padding-top: 6.5rem;
+}
+
+.main-view.no-spacer {
+  padding: 0;
 }
 
 .top-bar {

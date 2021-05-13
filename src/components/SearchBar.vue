@@ -2,22 +2,32 @@
   <div
     class="search-bar-wrap abs is-flex is-justify-content-center is-align-items-center"
   >
-    <form action="" class="search-bar">
+    <div class="search-bar">
       <div
         class="search-bar-frame is-flex is-align-items-center is-justify-content-space-between"
       >
-        <input
-          type="text"
-          name="searchValue"
-          placeholder="검색어를 입력하세요"
-        />
-        <b-button class="search-submit" type="submit" rounded>
+        <input type="text" v-model="query" placeholder="검색어를 입력하세요" />
+        <b-button class="search-submit" @click="submitQuery" rounded>
           <icon>search</icon>
         </b-button>
       </div>
-    </form>
+    </div>
   </div>
 </template>
+<script>
+export default {
+  data: function() {
+    return {
+      query: "",
+    };
+  },
+  methods: {
+    submitQuery: function() {
+      this.$router.push({ name: "Bids", query: { query: this.query } });
+    },
+  },
+};
+</script>
 <style lang="scss">
 @import "../assets/variables.scss";
 
@@ -47,6 +57,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   border: 0;
+  color: $white;
   background: transparent;
 }
 

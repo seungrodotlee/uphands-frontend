@@ -114,18 +114,33 @@ export default {
     bidClicked(evt) {
       this.$router.push({ path: `/bid/${evt.bidNo}` });
     },
-    minimizeTags: function(t) {
+    minimizeTags(t) {
       return t.slice(0, 3);
     },
+    getInquiryResult(q) {},
   },
-  mounted: function() {},
+  watch: {
+    $route: function(to, from) {
+      let newQuery = to.query.query;
+      this.getInquiryResult(newQuery);
+    },
+  },
+  mounted: function() {
+    let query = this.$route.query.query;
+    this.getInquiryResult(query);
+  },
 };
 </script>
 
 <style lang="scss">
+.bid-list-wrap {
+  padding-bottom: 2.5rem !important;
+}
+
 .bid-list {
   height: 100%;
   padding: 2rem 0;
+  border-radius: 2.5rem;
   box-shadow: 0 0 15px rgba($primary, 0.3);
 }
 
