@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <search-bar class="abs"></search-bar>
     <div class="home-article-fixed-bg fixed full-view">
       <div
         class="handshake-wrap abs full-y is-flex is-align-items-center is-justify-content-center"
@@ -77,13 +76,11 @@
 }
 </style>
 <script>
-import SearchBar from "../components/SearchBar.vue";
 import Handshake from "../components/Handshake.vue";
 
 export default {
   name: "Home",
   components: {
-    "search-bar": SearchBar,
     handshake: Handshake,
   },
 };

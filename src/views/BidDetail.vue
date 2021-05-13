@@ -1,13 +1,5 @@
 <template>
   <div class="bid-detail container">
-    <b-button
-      class="abs back-to-list-btn"
-      tag="router-link"
-      to="/bids"
-      type="is-ghost"
-    >
-      목록으로 돌아가기
-    </b-button>
     <article class="bid-article">
       <section class="sub-info-section level box">
         <p class="bid-no">
@@ -152,21 +144,6 @@ export default {
 </script>
 
 <style lang="scss">
-.button.back-to-list-btn {
-  height: 2.5rem;
-  font-size: 1.5rem;
-  top: 1rem;
-  right: 0;
-  font-weight: 700;
-  text-decoration: none !important;
-  color: black !important;
-  transition: transform 0.5s;
-}
-
-.button.back-to-list-btn:hover {
-  transform: translateX(-0.5rem);
-}
-
 .bid-article * {
   box-shadow: none !important;
 }
@@ -176,10 +153,6 @@ export default {
   border-radius: 0;
   border: 1px solid rgba($grey, 0.25);
   margin-bottom: 0.5rem !important;
-}
-
-.bid-detail {
-  padding-top: 6.5rem;
 }
 
 .bid-detail-content {

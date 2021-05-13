@@ -1,6 +1,6 @@
 <template>
   <div
-    class="search-bar-wrap full-x is-flex is-justify-content-center is-align-items-center"
+    class="search-bar-wrap abs is-flex is-justify-content-center is-align-items-center"
   >
     <form action="" class="search-bar">
       <div
@@ -22,6 +22,8 @@
 @import "../assets/variables.scss";
 
 .search-bar-wrap {
+  left: 50%;
+  transform: translateX(-50%);
   padding: 1rem 0;
   z-index: 10;
 }

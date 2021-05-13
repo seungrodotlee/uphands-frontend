@@ -1,6 +1,5 @@
 <template>
   <div class="bids full">
-    <search-bar class="abs"></search-bar>
     <div class="bid-list-wrap container full-y">
       <b-table
         class="bid-list flex vertical is-align-items-center is-justify-content-space-between"
@@ -127,7 +126,6 @@ export default {
 .bid-list {
   height: 100%;
   padding: 2rem 0;
-  padding-top: 6.5rem;
   box-shadow: 0 0 15px rgba($primary, 0.3);
 }
 
