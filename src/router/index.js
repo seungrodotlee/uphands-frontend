@@ -50,6 +50,11 @@ const routes = [
     component: Member,
   },
   {
+    path: "/member/:memberName",
+    name: "Member",
+    component: Member,
+  },
+  {
     path: "/annos",
     name: "AnnounceList",
     component: AnnounceList,
@@ -85,7 +90,7 @@ const routes = [
     component: BidDetail,
   },
   {
-    path: "/participate",
+    path: "/participate/:bidNo",
     name: "ParticipateBid",
     component: ParticipateBid,
   },

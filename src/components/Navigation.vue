@@ -1,5 +1,5 @@
 <template>
-  <div class="navigation flex vertical centering abs vertical">
+  <nav class="navigation fixed flex vertical centering vertical">
     <b-button class="nav-home-btn" tag="router-link" to="/" type="is-black">
       <icon>home</icon>
     </b-button>
@@ -26,7 +26,7 @@
     <b-button class="nav-back-btn" tag="router-link" to="/" type="is-black">
       <icon>arrow_back</icon>
     </b-button>
-  </div>
+  </nav>
 </template>
 <style lang="scss">
 @import "../assets/variables.scss";
@@ -34,7 +34,7 @@
 .navigation {
   min-height: 2.5rem;
   border-radius: 1.25rem;
-  background: rgba($black, 0.75);
+  background: rgba($primary, 0.5);
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
@@ -61,6 +61,7 @@
   transition: opacity 1s;
 }
 
+.home + .navigation .button::before,
 .navigation > .button:hover {
   opacity: 1;
 }
@@ -81,6 +82,7 @@
   transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
 }
 
+.home + .navigation .button::before,
 .navigation:hover > .button::before {
   transform: translateX(0);
   opacity: 1;

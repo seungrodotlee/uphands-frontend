@@ -6,7 +6,12 @@
           공고번호 <span class="bold">{{ bidData.bidNo }}</span>
         </p>
         <p class="bidder">
-          작성자 <span class="bold">{{ bidData.bidder }}</span>
+          작성자
+          <router-link
+            :to="{ name: 'Member', params: { memberName: bidData.bidder } }"
+            class="bold"
+            >{{ bidData.bidder }}</router-link
+          >
         </p>
       </section>
       <b-collapse class="card" animation="slide">
@@ -52,9 +57,15 @@
       <section class="bid-main-article box">
         <h1 class="bid-title title black is-flex is-align-items-center">
           {{ bidData.bidName }}
-          <div class="tag is-large is-primary">
+          <div class="bid-current-step-tag tag is-large is-primary">
             {{ progressSteps[bidData.current] }}
           </div>
+          <router-link
+            class="join-bid-btn tag is-large is-success"
+            v-if="bidData.current === 1"
+            :to="{ name: 'ParticipateBid', params: { bidNo: bidData.bidNo } }"
+            >입찰참가하기</router-link
+          >
         </h1>
         <div class="content">
           {{ bidData.bidDetail }}
@@ -159,7 +170,8 @@ export default {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.bid-title > .tag {
+.bid-title > .bid-current-step-tag,
+.bid-title > .join-bid-btn {
   transform: translateY(0.075em);
   margin-left: 1rem;
 }

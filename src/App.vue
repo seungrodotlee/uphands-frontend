@@ -26,8 +26,8 @@
         ></search-bar>
       </div>
     </div>
-    <navigation></navigation>
     <router-view class="main-view" />
+    <navigation></navigation>
   </div>
 </template>
 <style lang="scss">

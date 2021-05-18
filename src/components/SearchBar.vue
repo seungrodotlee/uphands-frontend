@@ -6,7 +6,12 @@
       <div
         class="search-bar-frame is-flex is-align-items-center is-justify-content-space-between"
       >
-        <input type="text" v-model="query" placeholder="검색어를 입력하세요" />
+        <input
+          type="text"
+          v-model="query"
+          placeholder="검색어를 입력하세요"
+          @keypress.enter="submitQuery"
+        />
         <b-button class="search-submit" @click="submitQuery" rounded>
           <icon>search</icon>
         </b-button>
