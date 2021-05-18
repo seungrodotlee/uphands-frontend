@@ -83,7 +83,7 @@ export default {
   padding: 2rem;
 }
 
-.checkbox {
+.login-wrap .checkbox {
   font-size: 0.75rem;
   font-weight: 500;
 }
