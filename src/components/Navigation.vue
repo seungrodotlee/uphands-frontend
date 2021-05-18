@@ -6,24 +6,44 @@
     <b-button
       :class="logined ? 'nav-account-btn' : 'nav-login-btn'"
       tag="router-link"
-      to="/"
+      :to="logined ? '/profile' : '/login'"
       type="is-black"
     >
       <icon>account_circle</icon>
     </b-button>
-    <b-button class="nav-members-btn" tag="router-link" to="/" type="is-black">
+    <b-button
+      class="nav-members-btn"
+      tag="router-link"
+      to="/members"
+      type="is-black"
+    >
       <icon>business</icon>
     </b-button>
-    <b-button class="nav-announce-btn" tag="router-link" to="/" type="is-black">
+    <b-button
+      class="nav-announce-btn"
+      tag="router-link"
+      to="/annos"
+      type="is-black"
+    >
       <icon>campaign</icon>
     </b-button>
-    <b-button class="nav-new-bid-btn" tag="router-link" to="/" type="is-black">
+    <b-button
+      class="nav-new-bid-btn"
+      tag="router-link"
+      to="/newbid"
+      type="is-black"
+    >
       <icon>create</icon>
     </b-button>
-    <b-button class="nav-bids-btn" tag="router-link" to="/" type="is-black">
+    <b-button class="nav-bids-btn" tag="router-link" to="/bids" type="is-black">
       <icon>list_alt</icon>
     </b-button>
-    <b-button class="nav-back-btn" tag="router-link" to="/" type="is-black">
+    <b-button
+      class="nav-back-btn"
+      tag="a"
+      @click="$router.go(-1)"
+      type="is-black"
+    >
       <icon>arrow_back</icon>
     </b-button>
   </nav>
