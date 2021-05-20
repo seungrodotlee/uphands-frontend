@@ -55,6 +55,10 @@ body,
   padding: 0;
 }
 
+.main-view.fit-spacer {
+  padding-top: 3.5rem;
+}
+
 .top-bar {
   border-bottom: 1px solid rgba($black, 0.25);
   backdrop-filter: saturate(180%) blur(20px);

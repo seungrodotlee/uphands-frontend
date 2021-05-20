@@ -46,12 +46,12 @@ const routes = [
   },
   {
     path: "/member/:memberNo",
-    name: "Member",
+    name: "MemberNumber",
     component: Member,
   },
   {
     path: "/member/:memberName",
-    name: "Member",
+    name: "MemberName",
     component: Member,
   },
   {

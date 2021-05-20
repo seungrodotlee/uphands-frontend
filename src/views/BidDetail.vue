@@ -8,7 +8,7 @@
         <p class="bidder">
           작성자
           <router-link
-            :to="{ name: 'Member', params: { memberName: bidData.bidder } }"
+            :to="{ name: 'MemberName', params: { memberName: bidData.bidder } }"
             class="bold"
             >{{ bidData.bidder }}</router-link
           >
@@ -162,7 +162,7 @@ export default {
 .bid-article .box,
 .bid-article .card {
   border-radius: 0;
-  border: 1px solid rgba($grey, 0.25);
+  border: $border-color;
   margin-bottom: 0.5rem !important;
 }
 
