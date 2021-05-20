@@ -124,13 +124,18 @@ $colors: mergeColorMaps(
   flex-direction: column;
 }
 
-html h1 {
+html h1.big {
   font-size: 2rem;
   font-weight: 900;
 }
 
-html h2 {
+html h1 {
   font-size: 1.5rem;
+  font-weight: 700;
+}
+
+html h2 {
+  font-size: 1.25rem;
   font-weight: 700;
 }
 

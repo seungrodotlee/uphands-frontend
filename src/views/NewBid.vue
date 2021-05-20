@@ -5,9 +5,9 @@
       class="title-input is-large black square"
       placeholder="공고 제목을 입력하세요"
     />
-    <section class="category-section columns">
+    <section class="dropdown-section columns">
       <b-dropdown
-        class="category-selector column is-4"
+        class="category-selector column is-6"
         aria-role="list"
         v-model="categorySelected"
       >
@@ -20,22 +20,42 @@
             "
             type="is-primary"
             :icon-right="active ? 'menu-up' : 'menu-down'"
+            expanded
           />
         </template>
         <b-dropdown-item
           aria-role="listitem"
-          v-for="i in categoryList"
-          :key="i"
-          :value="i"
-          >{{ i }}</b-dropdown-item
+          v-for="c in categoryList"
+          :key="c"
+          :value="c"
+          >{{ c }}</b-dropdown-item
         >
       </b-dropdown>
-      <b-taginput
-        class="column is-8"
-        placeholder="태그를 입력하세요"
-        type="is-primary"
-        v-model="tags"
-      ></b-taginput>
+      <b-dropdown
+        class="selection-rule-selector column is-6"
+        aria-role="list"
+        v-model="selectionRuleSelected"
+      >
+        <template #trigger="{active}">
+          <b-button
+            :label="
+              selectionRuleSelected !== null
+                ? selectionRuleSelected
+                : '낙찰방식을 선택해주세요'
+            "
+            type="is-primary"
+            :icon-right="active ? 'menu-up' : 'menu-down'"
+            expanded
+          />
+        </template>
+        <b-dropdown-item
+          aria-role="listitem"
+          v-for="s in selectionRules"
+          :key="s"
+          :value="s"
+          >{{ s }}</b-dropdown-item
+        >
+      </b-dropdown>
     </section>
 
     <section class="schedule-section columns">
@@ -108,6 +128,15 @@
       ></div>
     </section>
     <hr />
+    <section class="tag-section">
+      <h2>태그입력</h2>
+      <b-taginput
+        placeholder="태그를 입력하세요"
+        type="is-primary"
+        v-model="tags"
+      ></b-taginput>
+    </section>
+    <hr />
     <!-- <section class="qualification-section">
       <h2>입찰참가자격</h2>
       <b-field v-for="(q, i) in qualis" :key="i">
@@ -136,7 +165,18 @@
       </b-field>
     </section> -->
     <section class="qualification-section">
+      <h2>입찰참가자격</h2>
       <list-writer :list.sync="qualis"></list-writer>
+    </section>
+    <hr />
+    <section class="submit-docs-section">
+      <h2>제출서류</h2>
+      <list-writer :list.sync="submitDocs"></list-writer>
+    </section>
+    <hr />
+    <section class="notes-section">
+      <h2>기타사항</h2>
+      <list-writer :list.sync="notes"></list-writer>
     </section>
   </div>
 </template>
@@ -153,14 +193,17 @@ export default {
       noRange: null,
       range: 0,
       categoryList: ["공사", "구매", "용역", "매각"],
-      tags: [],
       categorySelected: null,
+      selectionRules: ["최저가 낙찰", "적정가 낙찰", "최고가 낙찰"],
+      selectionRuleSelected: null,
       bidStart: null,
       bidEnd: null,
       addis: [],
       article: "",
-      qualiInput: "",
+      tags: [],
       qualis: [],
+      submitDocs: [],
+      notes: [],
     };
   },
   methods: {
@@ -178,18 +221,6 @@ export default {
         addiValue: "",
       });
     },
-    insertQauli() {
-      if (this.qualiInput !== "") {
-        this.qualis.push(this.qualiInput);
-      }
-
-      this.qualiInput = "";
-    },
-  },
-  watch: {
-    qualis(val) {
-      console.log(val);
-    },
   },
 };
 </script>
@@ -201,7 +232,14 @@ export default {
   box-shadow: 0 0 15px rgba($primary, 0.3);
 }
 
-.qualification-section > * {
+.selection-rule-selector .dropdown-menu,
+.category-selector .dropdown-menu {
+  width: calc(100% - 1.5rem);
+}
+
+.qualification-section > *,
+.submit-docs-section > *,
+.notes-section > * {
   margin-bottom: 1rem;
 }
 
