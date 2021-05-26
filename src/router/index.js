@@ -5,7 +5,7 @@ import AnnounceList from "../views/AnnounceList.vue";
 import AnnounceDetail from "../views/AnnounceDetail.vue";
 import Auth from "../views/Auth.vue";
 import BidDetail from "../views/BidDetail.vue";
-import Bids from "../views/Bids.vue";
+import BidList from "../views/BidList.vue";
 import ParticipateBid from "../views/ParticipateBid.vue";
 import Login from "../views/Login.vue";
 import Member from "../views/Member.vue";
@@ -82,7 +82,7 @@ const routes = [
   {
     path: "/bids",
     name: "BidList",
-    component: Bids,
+    component: BidList,
   },
   {
     path: "/bid/:bidNo",

@@ -212,5 +212,18 @@ html hr {
   background: rgba($black, 0.1);
 }
 
+.no-shadow-article,
+.no-shadow-article * {
+  box-shadow: none !important;
+}
+
+.squared {
+  border-radius: 0 !important;
+}
+
+.lined {
+  border: $basic-border;
+}
+
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

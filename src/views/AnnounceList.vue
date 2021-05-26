@@ -12,7 +12,7 @@
         <b-table-column
           field="annoNo"
           label="공지번호"
-          width="100"
+          width="6em"
           sortable
           numeric
           v-slot="props"
@@ -27,10 +27,17 @@
           label="공지일시"
           sortable
           v-slot="props"
+          width="6em"
         >
           {{ props.row.annoDate }}
         </b-table-column>
-        <b-table-column field="tag" label="태그" sortable v-slot="props">
+        <b-table-column
+          field="tag"
+          label="태그"
+          sortable
+          v-slot="props"
+          width="12em"
+        >
           <b-taglist>
             <b-tag
               :type="`is-${t.tagType}`"

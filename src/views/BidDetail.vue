@@ -1,7 +1,7 @@
 <template>
   <div class="bid-detail container">
-    <article class="bid-article">
-      <section class="sub-info-section level box">
+    <article class="bid-article no-shadow-article">
+      <section class="sub-info-section level box squared lined">
         <p class="bid-no">
           공고번호 <span class="bold">{{ bidData.bidNo }}</span>
         </p>
@@ -14,7 +14,7 @@
           >
         </p>
       </section>
-      <b-collapse class="card" animation="slide">
+      <b-collapse class="card squared lined" animation="slide">
         <template #trigger="props">
           <div class="card-header" role="button">
             <p class="card-header-title">
@@ -54,7 +54,7 @@
           </div>
         </div>
       </b-collapse>
-      <section class="bid-main-article box">
+      <section class="bid-main-article box squared lined">
         <h1 class="bid-title title black is-flex is-align-items-center">
           {{ bidData.bidName }}
           <div class="bid-current-step-tag tag is-large is-primary">
@@ -74,25 +74,25 @@
           <router-link
             class="bid-tag bold"
             :to="{ path: '/bids', query: { query: t.tagTitle, target: 'tag' } }"
-            v-for="t in bidData.tag"
-            :key="t.tagTitle"
+            v-for="(t, i) in bidData.tag"
+            :key="i"
             >#{{ t.tagTitle }}</router-link
           >
         </div>
       </section>
-      <section class="qualification-section box">
+      <section class="qualification-section box squared lined">
         <h1 class="subtitle bold">입찰참가자격</h1>
         <list-builder :list="bidData.qualification"></list-builder>
       </section>
-      <section class="selection-rule-section box">
+      <section class="selection-rule-section box squared lined">
         <h1 class="subtitle bold">낙찰자 결정방법</h1>
         <list-builder :list="bidData.selectionRule"></list-builder>
       </section>
-      <section class="submit-docs-section box">
+      <section class="submit-docs-section box squared lined">
         <h1 class="subtitle bold">제출서류</h1>
         <list-builder :list="bidData.submitDocs"></list-builder>
       </section>
-      <section class="notes-section box">
+      <section class="notes-section box squared lined">
         <h1 class="subtitle bold">기타사항</h1>
         <list-builder :list="bidData.notes"></list-builder>
       </section>
@@ -155,14 +155,8 @@ export default {
 </script>
 
 <style lang="scss">
-.bid-article * {
-  box-shadow: none !important;
-}
-
 .bid-article .box,
 .bid-article .card {
-  border-radius: 0;
-  border: $border-color;
   margin-bottom: 0.5rem !important;
 }
 

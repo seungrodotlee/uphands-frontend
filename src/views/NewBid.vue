@@ -242,7 +242,7 @@ export default {
 <style lang="scss">
 .new-bid {
   min-height: 100%;
-  border: $border-color;
+  border: $basic-border;
   box-shadow: 0 0 15px rgba($primary, 0.3);
 }
 
@@ -269,7 +269,7 @@ export default {
 
 .title-input {
   padding: 0 !important;
-  border-bottom: $border-color;
+  border-bottom: $basic-border;
 }
 
 .title-input > input {

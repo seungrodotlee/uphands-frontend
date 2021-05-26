@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     submitQuery: function() {
-      this.$router.push({ name: "Bids", query: { query: this.query } });
+      this.$router.push({ name: "BidList", query: { query: this.query } });
     },
   },
 };

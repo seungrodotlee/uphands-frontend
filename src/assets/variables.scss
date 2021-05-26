@@ -12,7 +12,8 @@ $grey: #b9b9b9;
 $white: #ececec;
 $light: #dfdfdf;
 
-$border-color: 1px solid rgba($black, 0.2);
+$border-color: rgba($black, 0.2);
+$basic-border: 1px solid $border-color;
 
 $background: darken($white, 5);
 

@@ -21,7 +21,7 @@
           </router-link>
         </div>
         <search-bar
-          v-if="['Home', 'Bids'].includes($route.name)"
+          v-if="['Home', 'BidList'].includes($route.name)"
           class="abs"
         ></search-bar>
       </div>
