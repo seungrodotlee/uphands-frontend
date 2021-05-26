@@ -5,11 +5,11 @@
         입찰에 참가하기 위해 아래 내용들을 자세히 읽고 확인해주세요!
       </h1>
       <div class="content">
-        <div class="box level" v-for="a in agreementList" :key="a.title">
-          {{ a.label }}
+        <div class="box level" v-for="(a, i) in agreementList" :key="i">
+          {{ a }}
           <b-checkbox-button
             v-model="userAgreements"
-            :native-value="a.title"
+            :native-value="i"
             type="is-success"
             >확인했습니다</b-checkbox-button
           >
@@ -41,14 +41,8 @@ export default {
   data: function() {
     return {
       agreementList: [
-        {
-          label: "입찰 마감 이후 입찰 취소 시 입찰가의 1%가 부과됩니다",
-          title: "fee",
-        },
-        {
-          label: "입찰가는 기초가의 10% 범위 내에서 작성되어야 합니다",
-          title: "range",
-        },
+        "입찰 마감 이후 입찰 취소 시 입찰가의 1%가 부과됩니다",
+        "입찰가는 기초가의 10% 범위 내에서 작성되어야 합니다",
       ],
       userAgreements: [],
       bidPrice: null,

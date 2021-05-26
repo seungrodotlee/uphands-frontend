@@ -184,5 +184,33 @@ html hr {
   height: 1px;
 }
 
+.list-table-wrap {
+  padding-bottom: 2.5rem !important;
+}
+
+.list-table {
+  height: 100%;
+  padding: 2rem 0;
+  border-radius: 2.5rem;
+  box-shadow: 0 0 15px rgba($primary, 0.3);
+}
+
+.list-table > .table-wrapper {
+  width: 100%;
+}
+
+.list-table > .top.level {
+  justify-content: center;
+}
+
+.list-table tr {
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+.list-table tbody tr:hover {
+  background: rgba($black, 0.1);
+}
+
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

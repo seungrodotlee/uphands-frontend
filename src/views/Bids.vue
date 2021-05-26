@@ -1,8 +1,8 @@
 <template>
   <div class="bids full">
-    <div class="bid-list-wrap container full-y">
+    <div class="list-table-wrap container full-y">
       <b-table
-        class="bid-list flex vertical is-align-items-center is-justify-content-space-between"
+        class="bid-list list-table flex vertical is-align-items-center is-justify-content-space-between"
         :data="bidsData"
         default-sort="bidNo"
         paginated
@@ -46,7 +46,7 @@
         <b-table-column field="tag" label="태그" sortable v-slot="props">
           <b-taglist>
             <b-tag
-              type="is-info"
+              :type="`is-${t.tagType}`"
               v-for="t in minimizeTags(props.row.tag)"
               :key="t.tagTitle"
             >
@@ -132,32 +132,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.bid-list-wrap {
-  padding-bottom: 2.5rem !important;
-}
-
-.bid-list {
-  height: 100%;
-  padding: 2rem 0;
-  border-radius: 2.5rem;
-  box-shadow: 0 0 15px rgba($primary, 0.3);
-}
-
-.bid-list > .table-wrapper {
-  width: 100%;
-}
-
-.bid-list > .top.level {
-  justify-content: center;
-}
-
-.bid-list tr {
-  cursor: pointer;
-  transition: background 0.5s;
-}
-
-.bid-list tbody tr:hover {
-  background: rgba($black, 0.1);
-}
-</style>
+<style lang="scss"></style>

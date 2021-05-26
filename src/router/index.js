@@ -81,7 +81,7 @@ const routes = [
   },
   {
     path: "/bids",
-    name: "Bids",
+    name: "BidList",
     component: Bids,
   },
   {
