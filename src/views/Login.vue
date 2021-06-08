@@ -2,8 +2,8 @@
   <div
     class="login-wrap container full-y is-flex is-align-items-center is-justify-content-center"
   >
-    <form action="" class="login-form">
-      <div class="input-wrap">
+    <form action="" class="login-form shadow">
+      <div class="input-wrap box no-shadow">
         <b-field label="이메일">
           <b-input type="email" name="email"> </b-input>
         </b-field>
@@ -37,7 +37,11 @@
           <router-link to="/">비밀번호 찾기</router-link>
         </p>
       </div>
-      <b-button class="login-btn" native-type="submit" type="is-primary"
+      <b-button
+        class="login-btn bold squared"
+        native-type="submit"
+        type="is-primary"
+        expanded
         >로그인</b-button
       >
     </form>
@@ -75,12 +79,8 @@ export default {
 @import "../assets/variables.scss";
 
 .login-form {
-  box-shadow: 0 0 10px rgba($black, 0.125);
+  border-radius: 0.25rem;
   overflow: hidden;
-}
-
-.input-wrap {
-  padding: 2rem;
 }
 
 .login-wrap .checkbox {
@@ -92,13 +92,5 @@ export default {
 .link-wrap > a {
   font-size: 0.75rem;
   color: $grey;
-}
-
-.button.login-btn {
-  width: 100%;
-  border-radius: 0.25rem;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  font-weight: 700;
 }
 </style>

@@ -7,6 +7,7 @@ import Auth from "../views/Auth.vue";
 import BidDetail from "../views/BidDetail.vue";
 import BidList from "../views/BidList.vue";
 import ParticipateBid from "../views/ParticipateBid.vue";
+import ParticipateResult from "../views/ParticipateResult.vue";
 import Login from "../views/Login.vue";
 import Member from "../views/Member.vue";
 import MemberList from "../views/MemberList.vue";
@@ -93,6 +94,11 @@ const routes = [
     path: "/participate/:bidNo",
     name: "ParticipateBid",
     component: ParticipateBid,
+  },
+  {
+    path: "/result/participate",
+    name: "ParticipateResult",
+    component: ParticipateResult,
   },
   {
     path: "/newbid",

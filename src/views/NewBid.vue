@@ -1,25 +1,8 @@
 <template>
   <div class="new-bid container fit-spacer">
-    <div class="bid-agreement-wrapper content" v-if="!userAgreementsChecked">
       <spacer size="1.5rem"></spacer>
-      <div class="box level" v-for="(a, i) in agreementList" :key="i">
-        {{ a }}
-        <b-checkbox-button
-          v-model="userAgreements"
-          :native-value="i"
-          type="is-success"
-          >확인했습니다</b-checkbox-button
-        >
-      </div>
-      <b-button
-        type="is-success"
-        expanded
-        :disabled="userAgreements.length < agreementList.length"
-        @click="userAgreementsChecked = true"
-        >모두 확인했습니다</b-button
-      >
-    </div>
-    <div class="bid-form" v-if="userAgreementsChecked">
+    <check-to-go :checkList="bidChecks" :pass.sync="allChecked"></check-to-go>
+    <div class="bid-form" v-if="allChecked">
       <b-input
         type="text"
         class="title-input is-large black square"
@@ -195,12 +178,11 @@ export default {
   },
   data: function() {
     return {
-      agreementList: [
+      bidChecks: [
         "입찰 수수료는 최종 낙찰자 결정 혹은 입찰 취소 시에 결제합니다.",
         "낙찰자가 낙찰을 거부할 경우 후순위 입찰자가 낙찰자로 선정됩니다.",
       ],
-      userAgreements: [],
-      userAgreementsChecked: false,
+      allChecked: false,
       noRange: null,
       range: 0,
       categoryList: ["공사", "구매", "용역", "매각"],
@@ -232,9 +214,7 @@ export default {
         addiValue: "",
       });
     },
-    submitBidForm() {
-      
-    }
+    submitBidForm() {},
   },
 };
 </script>

@@ -9,6 +9,7 @@ import Icon from "./components/Icon.vue";
 import Logo from "./components/Logo.vue";
 import Spacer from "./components/Spacer.vue";
 import ListBuilder from "./components/ListBuilder.vue";
+import CheckToGo from "./components/CheckToGo.vue";
 import "./assets/main.scss";
 
 Vue.prototype.$axios = Axios;
@@ -18,6 +19,7 @@ Vue.component("icon", Icon);
 Vue.component("logo", Logo);
 Vue.component("spacer", Spacer);
 Vue.component("list-builder", ListBuilder);
+Vue.component("check-to-go", CheckToGo);
 
 new Vue({
   router,
