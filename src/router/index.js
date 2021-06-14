@@ -4,14 +4,16 @@ import Home from "../views/Home.vue";
 import AnnounceList from "../views/AnnounceList.vue";
 import AnnounceDetail from "../views/AnnounceDetail.vue";
 import Auth from "../views/Auth.vue";
+import NewBid from "../views/NewBid.vue";
 import BidDetail from "../views/BidDetail.vue";
 import BidList from "../views/BidList.vue";
 import ParticipateBid from "../views/ParticipateBid.vue";
 import ParticipateResult from "../views/ParticipateResult.vue";
+import OpenBid from "../views/OpenBid.vue";
 import Login from "../views/Login.vue";
 import Member from "../views/Member.vue";
 import MemberList from "../views/MemberList.vue";
-import NewBid from "../views/NewBid.vue";
+
 import Profile from "../views/Profile.vue";
 import QnA from "../views/QnA.vue";
 import Questions from "../views/Questions.vue";
@@ -104,6 +106,12 @@ const routes = [
     path: "/newbid",
     name: "NewBid",
     component: NewBid,
+  },
+  {
+    path: "/openbid/:code/:price",
+    name: "OpenBid",
+    component: OpenBid,
+    props: true,
   },
 ];
 

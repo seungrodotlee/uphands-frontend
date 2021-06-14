@@ -1,11 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    bidData: [{
+    user: {
+      userName: "이승로",
+    },
+    bidData: [
+      {
         bidNo: 1,
         bidName: "엘레베이터 공사",
         bidder: "전주대학교",
@@ -13,7 +17,8 @@ export default new Vuex.Store({
           "전주대학교 공학관 엘레베이터를 새로 설치하려 합니다. 많은 참여 부탁드립니다.",
         annoDate: "2021-01-01",
         bidStart: "2021-02-02",
-        bidEnd: "2021-03-02",
+        bidOpen: "2021-03-02",
+        bidClose: "2021-03-09",
         basePrice: "100,000",
         period: { type: "공사", data: "3개월" },
         etc: [
@@ -44,12 +49,10 @@ export default new Vuex.Store({
           "기타 입찰에 관한 사항은 본교 총무지원실 계약담당(☏063-220-2145)에게 문의하시고, 제안서에 관한 사항은 시설지원실(☏063-220-2182)로 문의하시기 바랍니다.",
         ],
         current: 1,
-      }]
+      },
+    ],
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+  mutations: {},
+  actions: {},
+  modules: {},
+});
