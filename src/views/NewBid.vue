@@ -1,6 +1,6 @@
 <template>
   <div class="new-bid container fit-spacer">
-      <spacer size="1.5rem"></spacer>
+    <spacer size="1.5rem"></spacer>
     <check-to-go :checkList="bidChecks" :pass.sync="allChecked"></check-to-go>
     <div class="bid-form" v-if="allChecked">
       <b-input
@@ -214,7 +214,9 @@ export default {
         addiValue: "",
       });
     },
-    submitBidForm() {},
+    submitBidForm() {
+      //서버에 데이터 전송
+    },
   },
 };
 </script>
